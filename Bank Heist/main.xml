@@ -1,0 +1,119 @@
+<table name="Bank Heist">
+	<Localization default="english.txt" directory="loc">
+		<loc file="english.txt" language="english"/>
+	</Localization>
+	<level ai_group_type="america" briefing_dialog="Play_pln_branchbank_random_stage1_brief" cube="cube_apply_heist_bank" ghost_bonus="0.1" id="Bank Heist" max_bags="24" music="heist" outro_event="Play_pln_branchbank_stage1_end">
+		<add file="levels/Bank Heist/add.xml"/>
+		<assets/>
+		<include directory="levels/Bank Heist">
+			<file file="world.world" type="binary"/>
+			<file file="continents.continents" type="binary"/>
+			<file file="mission.mission" type="binary"/>
+			<file file="nav_manager_data.nav_data" type="binary"/>
+			<file file="world_sounds.world_sounds" type="binary"/>
+			<file file="world_cameras.world_cameras" type="binary"/>
+			<file file="world/world.continent" type="binary"/>
+			<file file="world/world.mission" type="binary"/>
+			<file file="pc_only/pc_only.continent" type="binary"/>
+			<file file="pc_only/pc_only.mission" type="binary"/>
+			<file file="editor_only/editor_only.continent" type="binary"/>
+			<file file="editor_only/editor_only.mission" type="binary"/>
+			<file file="cover_data.cover_data" type="binary"/>
+		</include>
+		<intro_event>
+			<value_node value="Play_pln_branchbank_random_a_intro_a"/>
+			<value_node value="Play_pln_branchbank_gold_a_intro_a"/>
+			<value_node value="Play_pln_branchbank_depositbox_a_intro_a"/>
+			<value_node value="Play_pln_branchbank_cash_stage1_intro_a"/>
+		</intro_event>
+		<mission_data>
+			<table mission="standalone"/>
+		</mission_data>
+		<packages>
+			<value_node value="packages/narr_firestarter3"/>
+			<value_node value="levels/narratives/h_firestarter/stage_3/world"/>
+			<value_node value="levels/narratives/h_firestarter/stage_3/world_sounds"/>
+			<value_node value="levels/narratives/h_firestarter/stage_3/pc_only/pc_only"/>
+			<value_node value="levels/narratives/h_firestarter/stage_3/world/world"/>
+			<value_node value="levels/narratives/h_firestarter/stage_3/editor_only/editor_only"/>
+		</packages>
+		<preplanning mission_briefing_texture="guis/textures/pd2/pre_planning/mission_briefing_big" total_budget="8">
+			<table map_size="1" map_x="-0.6" map_y="0" name_id="menu_pp_branchbank_loc_a" rotation="0" texture="guis/textures/pd2/pre_planning/branchbank_1" x1="-3500" x2="500" y1="-300" y2="3700">
+				<custom_points/>
+			</table>
+			<table map_size="1" map_x="0.6" map_y="0" name_id="menu_pp_branchbank_loc_b" rotation="0" texture="guis/textures/pd2/pre_planning/branchbank_2" x1="-5500" x2="2500" y1="-3200" y2="4800">
+				<custom_points/>
+			</table>
+			<default_plans vault_plan="branchbank_lance"/>
+			<start_location group="a" x="512" y="512" zoom="1"/>
+		</preplanning>
+		<script_data_mods directory="scriptdata">
+			<mod replacement="objectives.objective" replacement_type="custom_xml" target_ext="objective" target_path="gamedata/objectives">
+				<options merge_mode="add" mode="add"/>
+			</mod>
+		</script_data_mods>
+	</level>
+	<narrative briefing_event="pln_branchbank_gold_brf_speak" contact="bain" id="Bank Heist" jc="30" load_screen="guis/dlcs/pic/textures/loading/job_branchbank" region="street" variant_name="heist_branchbank_hl_gold">
+		<chain>
+			<table briefing_dialog="Play_pln_branchbank_gold_stage1_brief" briefing_id="heist_branchbank_gold_briefing" level_id="Bank Heist" mission="standalone" type="d" type_id="heist_type_assault">
+				<mission_filter>
+					<value_node value="3"/>
+				</mission_filter>
+			</table>
+		</chain>
+		<contract_cost>
+			<value_node value="16000"/>
+			<value_node value="32000"/>
+			<value_node value="80000"/>
+			<value_node value="160000"/>
+			<value_node value="200000"/>
+			<value_node value="200000"/>
+			<value_node value="200000"/>
+		</contract_cost>
+		<crimenet_callouts>
+			<value_node value="pln_branchbank_gold_cnc_01"/>
+		</crimenet_callouts>
+		<crimenet_videos>
+			<value_node value="cn_branchbank1"/>
+			<value_node value="cn_branchbank2"/>
+			<value_node value="cn_branchbank3"/>
+		</crimenet_videos>
+		<debrief_event/>
+		<experience_mul>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="1"/>
+			<value_node value="3"/>
+			<value_node value="3"/>
+			<value_node value="3"/>
+		</experience_mul>
+		<max_mission_xp>
+			<value_node value="12000"/>
+			<value_node value="12000"/>
+			<value_node value="12000"/>
+			<value_node value="12000"/>
+			<value_node value="12000"/>
+			<value_node value="12000"/>
+			<value_node value="12000"/>
+		</max_mission_xp>
+		<min_mission_xp>
+			<value_node value="12000"/>
+			<value_node value="12000"/>
+			<value_node value="12000"/>
+			<value_node value="12000"/>
+			<value_node value="12000"/>
+			<value_node value="12000"/>
+			<value_node value="12000"/>
+		</min_mission_xp>
+		<payout>
+			<value_node value="20000"/>
+			<value_node value="25000"/>
+			<value_node value="50000"/>
+			<value_node value="75000"/>
+			<value_node value="85000"/>
+			<value_node value="85000"/>
+			<value_node value="85000"/>
+		</payout>
+	</narrative>
+</table>
